@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Maker | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ██████████████████████████████████████████████████████████████
+           YOUR ORIGINAL CSS - EVERYTHING BELOW STAYS EXACTLY THE SAME */
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
+        header { background: #2c3e50; color: white; text-align: center; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+        nav { display: flex; justify-content: center; background: #34495e; padding: 0.75rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+        nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        nav a:hover { color: #f1c40f; }
+        .container { width: 80%; margin: auto; padding: 2rem; }
+        .cta-button { display: inline-block; background: #f1c40f; color: #333; padding: 12px 20px; border-radius: 8px; font-size: 18px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease-in-out; }
+        .cta-button:hover { background: #e1b20f; transform: scale(1.1); }
+        section { background: white; padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease-in-out; }
+        section:hover { transform: translateY(-5px); }
+        .portfolio, .Customer Reviews { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .portfolio img { 
+            width: 300px; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 5px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            transition: transform 0.3s ease-in-out; 
+            cursor: pointer;
+        }
+        .portfolio img:hover { transform: scale(1.05); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); }
+        /* Fullscreen image overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            transition: transform 0.5s ease;
+        }
+        .overlay.active {
+            display: flex;
+        }
+        .overlay.active img {
+            transform: scale(1);
+        }
+        .overlay .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Contact Form CSS */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form button {
+            background: #2980b9;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease-in-out;
+        }
+
+        .contact-form button:hover {
+            background: #1f618d;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #2c3e50;
+            color: white;
+            margin-top: 2rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Buttons Styling */
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 15px;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .btn-call { background-color: #28a745; }
+        .btn-call:hover { background-color: #218838; }
+
+        .btn-facebook { background-color: #1877F2; }
+        .btn-facebook:hover { background-color: #145dbf; }
+
+        .btn-messenger { background-color: #0084FF; }
+        .btn-messenger:hover { background-color: #006cd9; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Custom Cabinet Maker</h1>
+        <p>High-Quality Custom Cabinets for Every Space</p>
+        <a href="#contact" class="cta-button">Get a Free Quote</a>
+    </header>
+    <nav>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#Customer Reviews">Customer Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio">
+                <img src="images/c1.jpg" alt="Cabinet Project 1">
+                <img src="images/c2.jpg" alt="Cabinet Project 2">
+                <img src="images/c3.jpg" alt="Cabinet Project 3">
+                <img src="images/c4.jpg" alt="Cabinet Project 4">
+                <img src="images/c5.jpg" alt="Cabinet Project 5">
+                <img src="images/c6.jpg" alt="Cabinet Project 6">
+                <img src="images/c7.jfif" alt="Cabinet Project 7">
+                <img src="images/c8.jfif" alt="Cabinet Project 8">
+                <img src="images/c9.jfif" alt="Cabinet Project 9">
+                <img src="images/c10.jpg" alt="Cabinet Project 10">
+            </div>
+        </section>
+        <section id="services">
+            <h2>Services</h2>
+            <ul>
+                <li>Custom Kitchen Cabinets</li>
+                <li>Bathroom Vanities</li>
+                <li>Wooden Furniture</li>
+                <li>Cabinet Refacing</li>
+            </ul>
+        </section>
+        <section id="Customer Reviews">
+            <h2>Customer Reviews</h2>
+            <div class="Customer Reviews">
+                <img src="images/t1.jpg" alt="Happy Client 1">
+                <img src="images/t2.jpg" alt="Happy Client 2">
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form class="contact-form" id="contactForm" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSe1zRlDFwiYADguogAMIPwxb3d7aq6dk8d_2bPGkX9GNnWfnA/formResponse">
+                <input type="text" name="entry.1250294778" placeholder="Your Name" required>
+                <input type="email" name="entry.1826629704" placeholder="Your Email" required>
+                <textarea name="entry.608573498" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div id="thankYouMessage" style="display:none; text-align: center; margin-top: 20px; font-size: 20px; color: #2980b9;">
+                <p>Thank you for contacting us! We will get back to you shortly.</p>
+            </div>
+
+            <!-- Contact Buttons -->
+            <a class="btn btn-call" href="tel:09065255564">📞 Call Now</a>
+            <a class="btn btn-facebook" href="https://www.facebook.com/Woodworkscabinetmaker" target="_blank">📲 Call via Facebook</a>
+            <a class="btn btn-messenger" href="https://m.me/Woodworkscabinetmaker" target="_blank">💬 Chat on Messenger</a>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Custom Cabinet Maker. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Fullscreen overlay -->
+    <div class="overlay" id="overlay">
+        <span class="close" id="closeOverlay">&times;</span>
+        <img src="" id="fullScreenImage" alt="Fullscreen Image">
+    </div>
+
+    <script>
+        // Handle image click and open in fullscreen
+        const images = document.querySelectorAll('.portfolio img');
+        const overlay = document.getElementById('overlay');
+        const fullScreenImage = document.getElementById('fullScreenImage');
+        const closeOverlay = document.getElementById('closeOverlay');
+
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                fullScreenImage.src = this.src; // Set the clicked image as the full screen image
+                overlay.classList.add('active'); // Show the overlay
+            });
+        });
+
+        // Close the overlay when the close button is clicked
+        closeOverlay.addEventListener('click', function() {
+            overlay.classList.remove('active'); // Hide the overlay
+        });
+
+        // Handle form submission in the background
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Create a hidden iframe to handle the form submission in the background
+            var iframe = document.createElement('iframe');
+            iframe.name = 'hidden_iframe';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+
+            // Set the form target to the iframe to avoid page redirection
+            this.target = 'hidden_iframe';
+            this.submit(); // Submit the form to the hidden iframe
+
+            // Display thank-you message
+            document.getElementById('thankYouMessage').style.display = 'block';
+
+            // Optionally clear the form
+            setTimeout(function() {
+                document.getElementById('contactForm').reset();
+            }, 3000); // Clear the form after 3 seconds
+        });
+    </script>
+</body>
+</html>
